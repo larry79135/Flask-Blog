@@ -18,10 +18,15 @@ app.config['UPLOAD_FOLDER'] = params['upload_location']
 app.config.update(
     MAIL_SERVER = 'smtp.gmail.com',
     MAIL_PORT = '465',
+    
+    #MAIL_USE_TLS= True,
     MAIL_USE_SSL = True,
     MAIL_USERNAME = params['gmail-user'],
     MAIL_PASSWORD=  params['gmail-password']
 )
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 mail = Mail(app)
 if(local_server):
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
@@ -36,8 +41,8 @@ class Contacts(db.Model):
     name = db.Column(db.String(80), nullable=False)
     phone_num = db.Column(db.String(12), nullable=False)
     msg = db.Column(db.String(120), nullable=False)
-    date = db.Column(db.String(12), nullable=True)
-    email = db.Column(db.String(20), nullable=False)
+    date = db.Column(db.String(256), nullable=True)
+    email = db.Column(db.String(180), nullable=False)
 
 
 class Posts(db.Model):
@@ -46,10 +51,10 @@ class Posts(db.Model):
     slug = db.Column(db.String(21), nullable=False)
     content = db.Column(db.String(120), nullable=False)
     tagline = db.Column(db.String(120), nullable=False)
-    date = db.Column(db.String(12), nullable=True)
+    date = db.Column(db.String(256), nullable=True)
     img_file = db.Column(db.String(12), nullable=True)
 
-
+db.create_all()
 @app.route("/")
 def home():
     posts = Posts.query.filter_by().all()

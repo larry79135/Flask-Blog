@@ -2,21 +2,22 @@
   "params":
   {
     "local_server":"True",
-    "local_uri": "mysql://root:@localhost/codingthunder",
+    "local_uri": "mysql://root:123456@localhost:3306/codingthunder",
     "prod_uri":"mysql://root:@localhost/codingthunder",
-    "fb_url":"https://facebook.com/codingthunder",
-    "tw_url":"https://twitter.com/codingthunder",
-    "gh_url": "https://github.com/codingthunder",
-    "blog_name": "Coding Thunder",
-    "tag_line": "Heaven for programmers",
-    "gmail-user":"your-email@gmail.com",
-    "gmail-password":"gmailpassword",
-    "about_text": "Hi my name is harry and I create programming tutorials and I am a good boy",
+    "fb_url":"https://www.facebook.com/Gabrielshih01",
+    "tw_url":"https://twitter.com/larryshih12",
+    "gh_url": "https://github.com/larry79135",
+    "blog_name": "Larry Blogs",
+    "tag_line": "Keep on going, never give up",
+    "gmail-user":"testshih0524@gmail.com",
+    "gmail-password":"flask0524",
+    "about_text": "Hi my name is Larry and I am a funny boy",
     "no_of_posts": 3,
     "login_image":"login.svg",
-    "admin_user":"harry",
+    "admin_user":"Larry",
     "admin_password": "subscribenow",
-    "upload_location":"C:\\Users\\Haris\\PycharmProjects\\Flask-tut\\static"
+    "upload_location":"/home/classuser/Flask/Python-Flask-Blog/static/img"
+    
 
 
   }
